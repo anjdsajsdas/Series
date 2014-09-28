@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block content %}
+	<div class="container margen">
+		<div class="row">
+			<div class="col-md-2">
+				
+			</div>
+			<div class="col-md-8">
+				<div class="col-md-3">
+					<img src="{{ MEDIA_URL }}{{ serie.image }}" class="media-object img-rounded img-responsive">
+				</div>
+				<div class="col-md-8">
+					<h2>{{ serie.name }}</h2>
+					<p>{{ serie.description }}</p>
+				</div>
+			</div>
+			<div class="col-md-2">
+				
+			</div>
+		</div>
+
+		<div class="row margen">
+			<div class="col-md-2">
+				
+			</div>
+			<div class="col-md-8">
+				{% for temporada, capitulos in lista_capitulos %}
+					<h4>{{ temporada.name }}</h4>
+					<ul class="list-group">
+						{% for capitulo in capitulos %}
+							<a href="/ver/{{capitulo.slug}}"><li class="list-group-item">Capitulo {{ capitulo.orden }} - {{ capitulo.name }}</li></a>
+						{% endfor %}
+					</ul>
+				{% endfor %}
+			</div>
+			<div class="col-md-2">
+				
+			</div>
+		</div>
+	</div>
+{% endblock %}

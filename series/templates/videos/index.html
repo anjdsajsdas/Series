@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block metas %}
+    <meta name="keywords" content="series americana en español, series yonkis, series online, series online gratis, series en alta definicion, series en HD, series, ver series, ver series online">
+    <meta name="title" content="Ver Series Americanas Online en alta definición - SeriesParaTi">
+    <meta name="description" content="Portal de series americanas en alta definición! Tenemos todas tus series americanas favoritas en español">
+{% endblock %}
+
+
+{% block content %}
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h2 class="subtitulo">Eligue que serie deseas mirar!</h2>
+            </div>
+        </div>
+    </div>
+
+	<div class="container series">
+        <div class="row">
+            {% for serie in series %}
+                <a href="{% url 'lista_capitulos' serie.slug2 %}">
+                    <div class="col-md-2 serie">
+                        <img class="foto-serie" src="{{MEDIA_URL}}{{serie.image}}" class="media-object img-rounded img-responsive">
+                        <h3 id="titulo-serie">{{serie.name}}</h3>
+                    </div>  
+                </a>    
+            {% endfor %}
+        </div> 
+    </div>
+{% endblock %}

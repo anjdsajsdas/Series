@@ -1,0 +1,4 @@
+# Python bytecode:
+*.py[co]
+*.pyc# SQLite3 database files:
+*.db

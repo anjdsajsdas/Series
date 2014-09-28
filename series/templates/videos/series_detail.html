@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block content %}
+	<div class="container margen">
+		<div class="row">
+			<div class="col-md-2">
+				
+			</div>
+			<div class="col-md-8">
+				<div class="col-md-3">
+					<img src="{{ MEDIA_URL }}{{ serie.image }}" class="media-object img-rounded img-responsive">
+				</div>
+				<div class="col-md-8">
+					<h2>{{ serie.name }}</h2>
+					<p>{{ serie.description }}</p>
+				</div>
+			</div>
+			<div class="col-md-2">
+				
+			</div>
+		</div>
+		<hr>	
+		
+		<div class="row">
+			<div class="col-md-2">
+				
+			</div>
+			<div class="col-md-8">
+				<h2>{{capitulo.name}}</h2>
+				<embed
+					src="/static/video/mediaplayer.swf"
+					width="800"
+					height="500"
+					allowscriptaccess="always"
+					allowfullscreen="true"
+					flashvars="height=500&width=800&file=RUBIK_en_1_minuto.flv&screencolor=0x000000&logo=logo.gif&link=http://www.publiblanes.net"
+				/></embed>
+				
+			</div>
+			<div class="col-md-2">
+				
+			</div>
+		</div>
+	</div>
+{% endblock %}
